@@ -1,16 +1,19 @@
-# flutter_application_3
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# InfoAS
+Проект разработан в рамках школьного этапа хакатона Моя Профессия - IT в Аррктической школею 12-14 марта 2024 г.
+##Техническое задание
+-Интерактивная карта
+-Синхронизация времени
+-Карта с маршрутами автобусов
+-нижнее меню вкладок
+-поисковая строка
+##Стек технологий
+-Flutter
+-Dart
+-VS Code
+-GitHub
+##Команда "Хотон"
+| :------------------------------------------------------------- | :------------------------------------------------------------: | ---------------------------------------: |
+| Сергин Сергей                                                  |                         Кычкин Андрей                          |                       Семёнова Августина |
+| Full-Stack Web & Mobile разработчик                            |                        Product Manager                         |                           UX/UI Designer |
+| Победитель и лучший <br> разработчик МПИТ-2021                 |                      Победитель МПИТ-2022                      |                     Победитель МПИТ-2022 |
+| +7 984 109-30-55 <br> etteryand@gmail.com                      |        +7 914 291-78-01 <br> andrushkakychkin@gmail.com        | +7 914 277-40-56 <br> semalvas14@mail.ru |
