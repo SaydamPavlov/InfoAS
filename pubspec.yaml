@@ -60,6 +60,8 @@ flutter:
 
   assets:
     - assets/school1.png
+    - assets/school2.png
+    - assets/school3.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -10,12 +10,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Info AS',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Info AS Home Page'),
     );
   }
 }
@@ -30,34 +30,54 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   final int hour = DateTime.now().hour;
   final int minute = DateTime.now().minute;
-  final int second = DateTime.now().second;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('$hour:$minute:$second', style: const TextStyle(fontFamily: 'Times New Roman'),),
-        centerTitle: true,
-        backgroundColor: Colors.green,
-        leading: const IconButton(
-          icon: Icon(Icons.arrow_back_ios_new),
-          onPressed: null,
-          tooltip: 'Back',
+    return MaterialApp(
+      home: DefaultTabController(
+        length: 3,
+        child: Scaffold(
+          appBar: AppBar(
+            title: const Text('Info AS'),
+            bottom: const TabBar(
+              tabs: [
+                Tab(text: '1',),
+                Tab(text: '2',),
+                Tab(text: '3',),
+              ]
+            ),  
+          ),
+          body: TabBarView(
+            children: [
+              Zoom(
+                initTotalZoomOut: true,
+                child: const Center(
+                  child: Image(image: AssetImage('assets/school1.png'),)
+                ),
+              ),
+              Zoom(
+                initTotalZoomOut: true,
+                child: const Center(
+                  child: Image(image: AssetImage('assets/school2.png'),)
+                ),
+              ),
+              Zoom(
+                initTotalZoomOut: true,
+                child: const Center(
+                  child: Image(image: AssetImage('assets/school3.png'),)
+                ),
+              ),
+            ],
+          ),
+          floatingActionButton: FloatingActionButton(
+            onPressed: (){
+              Navigator.push(
+                context, MaterialPageRoute(builder: (context) => Cabpage(index: 1,))
+              );
+            },
+            tooltip: 'Cab',
+            child: const Icon(Icons.door_front_door_outlined),
           ),
         ),
-      body: Zoom(
-        initTotalZoomOut: true,
-        child: const Center(
-          child: Image(image: AssetImage('assets/school1.png'),)
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: (){
-          Navigator.push(
-            context, MaterialPageRoute(builder: (context) => Cabpage(index: 1,))
-          );
-        },
-        tooltip: 'Cab',
-        child: const Icon(Icons.door_front_door_outlined),
       ),
     );
   }
@@ -65,13 +85,14 @@ class _MyHomePageState extends State<MyHomePage> {
 class Cabpage extends StatelessWidget{
   Cabpage({super.key, required this.index});
   final int index;
-  final List<String> teathers = ["МЛП", "КАП"];
+  final List<String> teachers = ["МЛП", "КАП"];
+  final List<String> names = ["135", "305"];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       appBar: AppBar(
-        title: const Text('Кабинет', style: TextStyle(color: Colors.white),),
+        title: Text('Кабинет № ${names[index]}', style: const TextStyle(color: Colors.white),),
         centerTitle: true,
         backgroundColor: Colors.grey[850],
         elevation: 0.0,
@@ -100,7 +121,7 @@ class Cabpage extends StatelessWidget{
             ),
             const SizedBox(height: 10.0),
             Text(
-              teathers[index],
+              teachers[index],
               style: TextStyle(
                 color: Colors.amberAccent[200],
                 fontWeight: FontWeight.bold,
@@ -125,42 +146,6 @@ class Cabpage extends StatelessWidget{
                 fontSize: 28.0,
                 letterSpacing: 2.0,
               ),
-            ),
-            const SizedBox(height: 30.0),
-            const Text(
-              'CURRENT NINJA LEVEL',
-              style: TextStyle(
-                color: Colors.grey,
-                letterSpacing: 2.0,
-              ),
-            ),
-            const SizedBox(height: 10.0),
-            Text(
-              '8',
-              style: TextStyle(
-                color: Colors.amberAccent[200],
-                fontWeight: FontWeight.bold,
-                fontSize: 28.0,
-                letterSpacing: 2.0,
-              ),
-            ),
-            const SizedBox(height: 30.0),
-            Row(
-              children: <Widget>[
-                Icon(
-                  Icons.email,
-                  color: Colors.grey[400],
-                ),
-                const SizedBox(width: 10.0),
-                Text(
-                  'chun.li@thenetninja.co.uk',
-                  style: TextStyle(
-                    color: Colors.grey[400],
-                    fontSize: 18.0,
-                    letterSpacing: 1.0,
-                  ),
-                )
-              ],
             ),
           ],
         ),
