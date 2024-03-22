@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zoom_widget/zoom_widget.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -30,6 +31,9 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   final int hour = DateTime.now().hour;
   final int minute = DateTime.now().minute;
+  final String assetName1 = 'assets/firstfloor.svg';
+  final String assetName2 = 'assets/secondfloor.svg';
+  final String assetName3 = 'assets/thirdfloor.svg';
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -50,20 +54,26 @@ class _MyHomePageState extends State<MyHomePage> {
             children: [
               Zoom(
                 initTotalZoomOut: true,
-                child: const Center(
-                  child: Image(image: AssetImage('assets/school1.png'),)
+                maxZoomWidth: 2464,
+                maxZoomHeight: 2268,
+                child: Center(
+                  child: SvgPicture.asset(assetName1, semanticsLabel: 'My SVG Image',),
                 ),
               ),
               Zoom(
                 initTotalZoomOut: true,
-                child: const Center(
-                  child: Image(image: AssetImage('assets/school2.png'),)
+                maxZoomWidth: 2464,
+                maxZoomHeight: 2189,
+                child: Center(
+                  child: SvgPicture.asset(assetName2, semanticsLabel: 'My SVG Image',),
                 ),
               ),
               Zoom(
                 initTotalZoomOut: true,
-                child: const Center(
-                  child: Image(image: AssetImage('assets/school3.png'),)
+                maxZoomWidth: 1886,
+                maxZoomHeight: 2188,
+                child: Center(
+                  child: SvgPicture.asset(assetName3, semanticsLabel: 'My SVG Image',),
                 ),
               ),
             ],
