@@ -66,6 +66,7 @@ flutter:
     - assets/firstfloor.svg
     - assets/secondfloor.svg
     - assets/thirdfloor.svg
+    - assets/logo.jpg # u think u know me
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
